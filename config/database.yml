@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['db_username'] %>
+  password: <%= ENV['db_password'] %>
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: trading_app_postgresql
+test:
+  <<: *default
+  database: trading_app_test
+production:
+  <<: *default
+  database: trading_app_prod
