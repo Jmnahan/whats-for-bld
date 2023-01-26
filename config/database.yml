@@ -9,10 +9,12 @@ default: &default
 
 development:
   <<: *default
-  database: trading_app_postgresql
+  database: bld_postgresql
+
 test:
   <<: *default
-  database: trading_app_test
+  database: bld_test
+  
 production:
   <<: *default
-  database: trading_app_prod
+  database: bld_prod
