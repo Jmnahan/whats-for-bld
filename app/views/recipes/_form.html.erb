@@ -1,0 +1,35 @@
+<%= form_for recipe, url: url, method: method do |f| %>
+
+<p>
+  <% if @recipe.errors.any? %>
+    <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :dish_name %><br/>
+  <%= f.text_field :dish_name %>
+</p>
+<p>
+  <%= f.label :ingredient %><br/>
+  <%= f.text_field :ingredient %>
+</p>
+<p>
+  <%= f.label :direction %><br/>
+  <%= f.text_field :direction %>
+</p>
+<p>
+  <%= f.label :suggestion %><br/>
+  <%= f.text_field :suggestion %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>

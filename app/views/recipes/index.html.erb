@@ -1,0 +1,15 @@
+<h1>Index</h1>
+  <div>
+    <% @recipes.each do |recipe| %>
+      <p><%= recipe.id %></p>
+      <p>Dish: <%= recipe.dish_name %></p>
+      <p>Ingredients: <%= recipe.ingredient %></p>
+      <p>Directions: <%= recipe.direction %></p>
+      <p>Suggestions: <%= recipe.suggestion %></p>
+      <%= link_to "Edit", edit_recipe_path(recipe) %>
+      <%= button_to "Delete", recipe_path(recipe), method: :delete %>
+      <br>
+      <br>
+    <% end %>
+  </div>
+<%= link_to "Back", root_path %>
