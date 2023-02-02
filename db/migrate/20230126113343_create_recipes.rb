@@ -5,6 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[7.0]
       t.text :ingredient
       t.text :direction
       t.text :suggestion
+      t.integer :comments_counter, default: 0
       
       t.timestamps
     end

@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_26_113549) do
     t.text "ingredient"
     t.text "direction"
     t.text "suggestion"
+    t.integer "comments_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
