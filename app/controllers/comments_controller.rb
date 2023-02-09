@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_recipe
 
   def index
@@ -10,9 +11,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @recipe.comments.build(comment_params)
+    @comment = @recipe.comments.build(text: comment_params[:text], user_id: current_user.id, recipe_id: @recipe.id)
+    
     if @comment.save
-      redirect_to root_path
+      redirect_to recipe_path(@recipe) 
     else
       render :new
     end
@@ -44,11 +46,11 @@ class CommentsController < ApplicationController
 
   private
 
-  def get_get_recipe
+  def get_recipe
     @recipe = Recipe.find(params[:recipe_id])
   end
 
   def comment_params
-    params.require(:comment).permit(:text, :recipe_id)
+    params.require(:comment).permit(:text)
   end
 end

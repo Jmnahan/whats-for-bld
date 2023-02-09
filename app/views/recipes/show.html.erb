@@ -1,0 +1,22 @@
+<h1>Show</h1>
+  <div>
+    <p><%= @recipe.id %></p>
+    <p>Dish: <%= @recipe.dish_name %></p>
+    <p>Ingredients: <%= @recipe.ingredient %></p>
+    <p>Directions: <%= @recipe.direction %></p>
+    <p>Suggestions: <%= @recipe.suggestion %></p>
+    <p>Comments: <%= @recipe.comments_counter %> </p>
+    <br>
+    <%= render partial: "comments/create" %>
+    <br>
+  </div>
+  <div>
+    <% @comments.each do |comment| %>
+      <% if comment.user === nil %>
+      <% else %>
+        <p><%= comment.user.email %></p>
+      <%end%>
+      <p><%= comment.text %></p>
+    <% end %>
+  </div>
+<%= link_to "Back", root_path %>

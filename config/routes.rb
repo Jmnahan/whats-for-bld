@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'pages#landing'
   devise_for :users
 
+  get '/feed', to: 'pages#feed', as: 'pages_feed'
+
   resources :recipes do
     resources :comments
   end

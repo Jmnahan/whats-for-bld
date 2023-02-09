@@ -1,4 +1,4 @@
-<h1>Index</h1>
+<h1>Feed</h1>
   <div>
     <% @recipes.each do |recipe| %>
       <p><%= recipe.id %></p>
@@ -8,8 +8,6 @@
       <p>Suggestions: <%= recipe.suggestion %></p>
       <p>Comments: <%= recipe.comments_counter %> </p>
       <%= link_to "Show", recipe_path(recipe) %>
-      <%= link_to "Edit", edit_recipe_path(recipe) %>
-      <%= button_to "Delete", recipe_path(recipe), method: :delete %>
       <br>
       <br>
     <% end %>

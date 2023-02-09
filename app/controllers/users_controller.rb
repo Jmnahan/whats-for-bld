@@ -39,8 +39,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find params[:id]
-    @user.destroy!
+    if current_user.role = 'admin'
+      @user = User.find params[:id]
+      @user.destroy!
+    end
     redirect_to root_path
   end
 

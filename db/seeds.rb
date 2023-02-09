@@ -9,7 +9,16 @@
 admin = User.new email: 'admin1@email.com', password: 'password', role: :admin
 admin.save
 
-10.times do |n|
+5.times do |n|
   user = User.new email: "user#{n}@email.com", password: 'password'
-  user.save
+  user.save(validate: false)
+  
+  2.times do
+    dish_name = 3.times.map { (0...(rand(10))).map { ('a'..'z').to_a[rand(26)] }.join }.join(" ")
+    ingredient = 15.times.map { (0...(rand(10))).map { ('a'..'z').to_a[rand(26)] }.join }.join(" ")
+    direction = 20.times.map { (0...(rand(10))).map { ('a'..'z').to_a[rand(26)] }.join }.join(" ")
+    suggestion = 10.times.map { (0...(rand(10))).map { ('a'..'z').to_a[rand(26)] }.join }.join(" ")
+
+    recipe = Recipe.new(user:, dish_name:, ingredient:, direction:, suggestion:).save(validate: false)
+  end
 end
