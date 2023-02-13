@@ -5,10 +5,19 @@
     <p>Ingredients: <%= @recipe.ingredient %></p>
     <p>Directions: <%= @recipe.direction %></p>
     <p>Suggestions: <%= @recipe.suggestion %></p>
-    <p>Comments: <%= @recipe.comments_counter %> </p>
+    <p><%= @recipe.comments_counter %> <%= @recipe.comments_counter == 1 ? 'Comment' : 'Comments'%></p>
+    <p><%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
     <br>
     <%= render partial: "comments/create" %>
     <br>
+  </div>
+  <div>
+    <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= button_to 'Unlike', recipe_like_path(@recipe, pre_like), method: :delete %>
+    <% else %>
+      <%= button_to 'Like', recipe_likes_path(@recipe), method: :post %>
+    <% end %>
   </div>
   <div>
     <% @comments.each do |comment| %>

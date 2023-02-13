@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
+  has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   validates :dish_name, presence: true,
