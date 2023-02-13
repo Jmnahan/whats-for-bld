@@ -4,8 +4,8 @@
   <p>Hello <%= current_user.email %>!</p>
   <p>You are a [<%= current_user.role %>]</p>
   <% if current_user.admin? %>
-    <%= link_to "All Recipes", root_path %>
-    <%= link_to "All User", root_path %>
+    <%= link_to "All Recipes", pages_feed_path %>
+    <%= link_to "All User", users_path %>
   <% else %>
     <%= link_to "My Feed", pages_feed_path %>
     <%= link_to "Create new recipe", new_recipe_path %>

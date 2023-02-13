@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   root 'pages#landing'
   get '/feed', to: 'pages#feed', as: 'pages_feed'
-
   devise_for :users
-  
+
+  scope 'admin' do
+    resources :users
+  end
+
   resources :recipes do
     resources :comments
   end
