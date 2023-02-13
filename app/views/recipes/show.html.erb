@@ -1,6 +1,11 @@
 <h1>Show</h1>
   <div>
     <p><%= @recipe.id %></p>
+    <% if @recipe.banner.present? %>
+    <div style="width:400px; height:auto">
+     <%= image_tag(@recipe.banner, style: 'width:100%')%>
+    </div>
+    <% end %>
     <p>Dish: <%= @recipe.dish_name %></p>
     <p>Ingredients: <%= @recipe.ingredient %></p>
     <p>Directions: <%= @recipe.direction %></p>
