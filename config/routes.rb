@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'pages#landing'
+
   get '/feed', to: 'pages#feed', as: 'pages_feed'
-  devise_for :users
+
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   scope 'admin' do
     resources :users
