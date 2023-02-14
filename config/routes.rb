@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#landing'
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   get '/feed', to: 'pages#feed', as: 'pages_feed'
 

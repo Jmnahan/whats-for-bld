@@ -1,7 +1,7 @@
 <h1>What's for BLD?</h1>
 <% if current_user %>
   <p> You have sucessfully authenticated your account</p>
-  <p>Hello <%= current_user.email %>!</p>
+  <p>Hello <%= current_user.username %>!</p>
   <p>You are a [<%= current_user.role %>]</p>
   <% if current_user.admin? %>
     <%= link_to "All Recipes", root_path %>
