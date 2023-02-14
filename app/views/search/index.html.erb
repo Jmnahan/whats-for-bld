@@ -1,7 +1,20 @@
-<h1>Search#index</h1>
-<h3><%= pluralize(@recipes.count, "Result")%></h3>
+<h1><%= pluralize(@recipes.count, "Result")%></h1>
 
-<p><%= sort_link(@query, :dish_name, "Dish name", default_order: :asc)%></p>
-<% @recipes.each do |recipe|%>
-<p><%= link_to recipe.dish_name, recipe%></p>
-<% end %>
+<table>
+    <thead>
+      <tr>
+        <th><%= sort_link(@query, :dish_name, "Dish name", default_order: :asc)%></th>
+        <th><%= sort_link(@query, :created_at, "Created at:") %></th>
+        <th><%= sort_link(@query, :user, "Author") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipes.each do |recipe|%>
+        <tr>
+          <td><%= link_to recipe.dish_name, recipe%></td>
+          <td><%= link_to recipe.created_at.strftime("%F")   %></td>
+          <td><%= link_to recipe.user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

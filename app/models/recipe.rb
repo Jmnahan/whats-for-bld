@@ -5,7 +5,11 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   def self.ransackable_attributes(auth_object = nil)
-    ["dish_name"]
+    ["created_at", "dish_name" ]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["dish_name", "user"]
   end
 
   validates :dish_name, presence: true,
