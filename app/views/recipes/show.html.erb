@@ -1,22 +1,39 @@
 <h1>Show</h1>
   <div>
     <p><%= @recipe.id %></p>
+    <% if @recipe.banner.present? %>
+    <div style="width:400px; height:auto">
+     <%= image_tag(@recipe.banner, style: 'width:100%')%>
+    </div>
+    <% end %>
     <p>Dish: <%= @recipe.dish_name %></p>
     <p>Ingredients: <%= @recipe.ingredient %></p>
     <p>Directions: <%= @recipe.direction %></p>
     <p>Suggestions: <%= @recipe.suggestion %></p>
-    <p>Comments: <%= @recipe.comments_counter %> </p>
+    <p><%= @recipe.comments_counter %> <%= @recipe.comments_counter == 1 ? 'Comment' : 'Comments'%></p>
+    <p><%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
     <br>
     <%= render partial: "comments/create" %>
     <br>
+  </div>
+  <div>
+    <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= button_to 'Unlike', recipe_like_path(@recipe, pre_like), method: :delete %>
+    <% else %>
+      <%= button_to 'Like', recipe_likes_path(@recipe), method: :post %>
+    <% end %>
   </div>
   <div>
     <% @comments.each do |comment| %>
       <% if comment.user === nil %>
       <% else %>
         <p><%= comment.user.email %></p>
-      <%end%>
-      <p><%= comment.text %></p>
+      <% end %>
+        <p><%= comment.text %></p>
+      <% if current_user.role === "admin" || current_user && current_user == comment.user %>
+        <%= button_to "Delete", recipe_comment_path(@recipe, comment), method: :delete %>
+      <% end %>
     <% end %>
   </div>
 <%= link_to "Back", root_path %>

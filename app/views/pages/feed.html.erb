@@ -8,6 +8,9 @@
       <p>Suggestions: <%= recipe.suggestion %></p>
       <p>Comments: <%= recipe.comments_counter %> </p>
       <%= link_to "Show", recipe_path(recipe) %>
+      <% if current_user.admin? %>
+        <%= button_to "Delete", recipe_path(recipe), method: :delete %>
+      <% end %>
       <br>
       <br>
     <% end %>

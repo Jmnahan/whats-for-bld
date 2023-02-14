@@ -6,7 +6,8 @@
       <p>Ingredients: <%= recipe.ingredient %></p>
       <p>Directions: <%= recipe.direction %></p>
       <p>Suggestions: <%= recipe.suggestion %></p>
-      <p>Comments: <%= recipe.comments_counter %> </p>
+      <p><%= recipe.comments_counter %> <%= recipe.comments_counter == 1 ? 'Comment' : 'Comments'%></p>
+      <p><%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
       <%= link_to "Show", recipe_path(recipe) %>
       <%= link_to "Edit", edit_recipe_path(recipe) %>
       <%= button_to "Delete", recipe_path(recipe), method: :delete %>
