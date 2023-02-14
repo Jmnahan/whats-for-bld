@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'search/index'
+  get 'search', to: "search#index"
   root 'pages#landing'
 
   get '/feed', to: 'pages#feed', as: 'pages_feed'

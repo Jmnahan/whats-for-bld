@@ -4,6 +4,10 @@ class Recipe < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["dish_name"]
+  end
+
   validates :dish_name, presence: true,
                         length: { minimum: 5 }
   validates :ingredient, presence: true,
