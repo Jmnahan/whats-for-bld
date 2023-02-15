@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'search', to: "search#index"
   root 'pages#landing'
-
+  get 'search', to: "search#index"
   get '/feed', to: 'pages#feed', as: 'pages_feed'
-
+  get '/likes', to: 'recipes#likes', as: 'liked_recipes'
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   scope 'admin' do
@@ -11,11 +10,11 @@ Rails.application.routes.draw do
   end
 
   resources :recipes do
-    resources :comments
+    resources :comments, only: %i[create destroy]
   end
 
   resources :recipe do
-    resources :likes
+    resources :likes, only: %i[create destroy]
   end
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
