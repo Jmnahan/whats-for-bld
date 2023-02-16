@@ -1,7 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+  let(:user) {create :user}
+
+  before :each do
+    sign_in user
+  end
+
+  describe 'GET /' do
+    it 'returns http success' do
+      get root_path
+      expect(response).to be_successful
+    end
   end
 end
