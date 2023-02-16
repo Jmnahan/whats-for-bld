@@ -1,5 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:like) { create :like }
+
+  describe 'Like counter' do
+    before do
+      @user1 = create(:user)
+      @recipe1 = create(:recipe)
+      like = create(:like, user: @user1, recipe: @recipe1)
+    end
+
+    it 'Returns number of likes' do
+      expect(@recipe1.likes.count).to eq(1)
+    end
+
+    it 'User can only like once' do 
+      like = build(:like, user: @user1, recipe: @recipe1)
+      expect(like.save).to be false
+    end
+  end
 end
