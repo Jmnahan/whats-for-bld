@@ -45,6 +45,10 @@ class RecipesController < ApplicationController
 
     redirect_to root_path
   end
+
+  def likes
+    @recipe = current_user.likes
+  end
   
   private
 

@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-admin = User.new email: 'admin1@email.com', password: 'password', role: :admin
+admin = User.new(email: 'admin1@email.com', password: 'password', role: :admin, username: 'Admin1')
 admin.skip_confirmation!
 admin.save
 
 5.times do |n|
-  user = User.new email: "user#{n}@email.com", password: 'password'
+  user = User.new(email: "user#{n}@email.com", password: 'password', username: "Username#{n}")
   user.skip_confirmation!
   user.save(validate: false)
   
