@@ -4,8 +4,8 @@ RSpec.describe "Users", type: :request do
   let(:user) {create :user}
 
   before :each do 
-    @user = create(:user, role: "user")
-    sign_in @user
+    user = create(:user, role: "user")
+    sign_in user
   end
 
   describe 'GET /' do

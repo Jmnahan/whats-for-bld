@@ -63,7 +63,8 @@ RSpec.describe "Recipes", type: :request do
 
   describe 'Delete recipe' do
     it 'should return http success' do
-      delete recipe_path(recipe)
+      created_recipe = create(:recipe)
+      delete recipe_path(created_recipe)
       expect(response).to redirect_to root_path
     end
   end

@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
+  let(:user) {create :user}
+  let(:recipe) { create :recipe }
   let(:comment) { create :comment }
 
   describe 'Comment' do
@@ -12,13 +14,11 @@ RSpec.describe Comment, type: :model do
 
   describe 'Comment counter' do
     before do
-      @user1 = create(:user)
-      @recipe1 = create(:recipe)
-      comment = create(:comment, user: @user1, recipe: @recipe1)
+      comment = create(:comment, user: user, recipe: recipe)
     end
 
     it "Returns number of posts for a user" do
-      expect(@recipe1.comments.count).to eq(1)
+      expect(recipe.comments.count).to eq(1)
     end
   end
 end
