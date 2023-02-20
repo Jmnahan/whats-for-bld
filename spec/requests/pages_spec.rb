@@ -1,14 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe "Pages", type: :request do
-  describe "GET /landing" do
-    before do
-      get root_path
-    end
+  let(:user) {create :user}
 
-    it "returns http success" do
-      expect(response).to have_http_status(:success)
-    end
+  before :each do
+    sign_in user
   end
 
+  describe 'GET /' do
+    it 'landing returns http success' do
+      get root_path
+      expect(response).to be_successful
+    end
+
+    it 'feed returns http success' do
+      get pages_feed_path
+      expect(response).to be_successful
+    end
+  end
 end

@@ -1,11 +1,18 @@
 FactoryBot.define do
-
   sequence :email do |n|
-    "test#{n}@example.com"
+    "user#{n}@example"
+  end
+
+  sequence :username do |n|
+    "username#{n}"
   end
 
   factory :user do
     email { generate :email }
-    password { "password" }
+    username { generate :username }
+    password { 'password' }
+    after(:build)   { |u| u.skip_confirmation_notification! }
+    after(:create)  { |u| u.confirm }
   end
+  
 end
