@@ -4,6 +4,10 @@
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
   </div>
