@@ -1,11 +1,26 @@
-<h1>What's for BLD?</h1>
-<% if current_user %>
-  <p> You have sucessfully authenticated your account</p>
-  <p>Hello <%= current_user.username %>!</p>
-  <p>You are a [<%= current_user.role %>]</p>
-  <br>
-<% else %>
-  <p>You are not signed in</p>
-  <%= link_to "Sign up!", new_user_registration_path %>
-  <%= link_to "Login", new_user_session_path %>
-<% end %>
+<div>
+  <div class="flex flex-row items-center bg-yellow-400 px-8 py-8">
+    <%= image_tag("icon.png", :size => "60x60") %>
+    <h1 class="text-3xl ml-4">What's for Breakfast-Lunch-Dinner?</h1>
+  </div>
+  <div clas="relative">
+    <div><%= image_tag("landing.jpg", style: 'height:auto; width:100%;') %></div>
+    <div class="absolute bottom-1/3 left-1/2 bg-red-200 w-2/6 h-2/6 rounded-lg">
+      <% if current_user %>
+        <p> You have sucessfully authenticated your account</p>
+        <p>Hello <%= current_user.username %>!</p>
+        <p>You are a [<%= current_user.role %>]</p>
+        <br>
+      <% else %>
+        <div class="flex flex-col">
+          <h3>“Cooking is all about people. Food is maybe the only universal thing that really has the power to bring everyone together. No matter what culture, everywhere around the world, people eat together.” – Guy Fieri</h3>
+          <h3>Share your culture through recipes</h3>
+          <div>
+            <%= link_to "Sign up!", new_user_registration_path %> | 
+            <%= link_to "Login", new_user_session_path %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

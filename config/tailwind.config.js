@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'landing': "url('/images/landing.jpg')"
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
