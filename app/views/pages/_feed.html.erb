@@ -1,0 +1,20 @@
+<div class="mt-20">
+  <h1>Feed</h1>
+    <div>
+      <% @recipes.each do |recipe| %>
+        <p><%= recipe.id %></p>
+        <p>Dish: <%= recipe.dish_name %></p>
+        <p>Ingredients: <%= recipe.ingredient %></p>
+        <p>Directions: <%= recipe.direction %></p>
+        <p>Suggestions: <%= recipe.suggestion %></p>
+        <p>Comments: <%= recipe.comments_counter %> </p>
+        <%= link_to "Show", recipe_path(recipe) %>
+        <% if current_user.admin? %>
+          <%= button_to "Delete", recipe_path(recipe), method: :delete %>
+        <% end %>
+        <br>
+        <br>
+      <% end %>
+    </div>
+  <%= link_to "Back", root_path %>
+</div>
