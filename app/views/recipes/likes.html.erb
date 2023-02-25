@@ -5,15 +5,13 @@
     <div class="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm text-gray-800 mt-4 mb-4 border-2">
       <div class="flex items-center justify-between">
         <span class="text-sm"><%= r.created_at.strftime("%c") %></span>
-        <div>
-          <a class="flex items-center">
-            <% if r.recipe.user.image.attached? %>
-              <%= image_tag(r.recipe.user.image, style:"height: 40px;") %>
-            <% else %>
-              <%= image_tag("default.png", style:"height: 40px;") %>
-            <% end %>
-            <span class="mx-2"><%= r.recipe.user.username %></span>
-          </a>
+        <div class="flex items-center">
+          <% if r.recipe.user.image.attached? %>
+            <%= image_tag(r.recipe.user.image, style:"height: 40px;") %>
+          <% else %>
+            <%= image_tag("default.png", style:"height: 40px;") %>
+          <% end %>
+          <span class="mx-2"><%= r.recipe.user.username %></span>
         </div>
       </div>
       <div class="mt-3 ">
