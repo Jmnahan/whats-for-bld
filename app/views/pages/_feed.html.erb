@@ -23,14 +23,21 @@
         <p class="mt-2"><%= recipe.suggestion %></p>
       </div>
       <div class="flex items-center justify-between mt-4">
-        <button class="hover:underline text-violet-400">
-          <%= link_to "Read More", recipe_path(recipe) %>
-        </button>
         <div>
-          <span class="text-gray-400"><%= recipe.comments_counter %> <%= recipe.comments_counter == 1 ? 'Comment' : 'Comments'%></span>
+          <button class="hover:underline text-violet-400">
+            <%= link_to "Read More", recipe_path(recipe) %>
+          </button>
           <% if current_user.admin? %>
             <%= button_to "Delete", recipe_path(recipe), method: :delete %>
           <% end %>
+        </div>
+        <div class="text-gray-400">
+          <span >
+            <%= recipe.comments_counter %> <%= recipe.comments_counter == 1 ? 'Comment' : 'Comments'%>
+          </span> |
+          <span>
+            <%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%>
+          </span>
 			  </div>
       </div>
     </div>
