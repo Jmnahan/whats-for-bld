@@ -18,10 +18,9 @@
           </button> | 
           <button class="mx-1">
             <%= link_to "Edit", edit_recipe_path(recipe) %>
-          </button> | 
-          <button class="ml-1">
-            <%= button_to "Delete", recipe_path(recipe), method: :delete %>
-          </button>
+          </button> 
+          <span class="mr-1">|</span> 
+          <%= button_to "Delete", recipe_path(recipe), method: :delete %>
         </div>
         <div class="text-gray-400">
           <span>
