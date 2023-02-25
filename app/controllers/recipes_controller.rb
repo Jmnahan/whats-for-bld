@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
    @recipe = current_user.recipes.build recipe_params
 
     if @recipe.save
-      redirect_to root_path
+      redirect_to recipes_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -50,7 +50,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
 
-    redirect_to root_path
+    redirect_to recipes_path
   end
 
   def likes
