@@ -32,9 +32,9 @@
           <% end %>
         </div>
         <div class="text-gray-400">
-          <span >
+          <span>
             <%= recipe.comments_counter %> <%= recipe.comments_counter == 1 ? 'Comment' : 'Comments'%>
-          </span> |
+          </span>
           <span>
             <%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%>
           </span>
@@ -42,6 +42,7 @@
       </div>
     </div>
   </div>
+</div>
   <% end %>
 
 
