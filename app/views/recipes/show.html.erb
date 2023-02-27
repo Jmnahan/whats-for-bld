@@ -27,7 +27,7 @@
         <%= simple_format @recipe.suggestion %>
       </div>
       <div class="flex items-center justify-between mt-4">
-        <div class="bg-blue-200 px-4 rounded-xl">
+        <div class="bg-lime-300 px-4 rounded-xl">
           <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
           <% if pre_like %>
             <%= button_to 'Unlike', recipe_like_path(@recipe, pre_like), method: :delete %>
@@ -51,7 +51,7 @@
     <%= render partial: "comments/create" %>
     <div class="my-8 ">
       <% @comments.each do |comment| %>
-        <div class="border-2 shadow-sm w-fit pl-2 pr-12 py-2 rounded-lg mb-4">
+        <div class="border-2 shadow-sm w-full pl-2 pr-12 py-2 rounded-lg mb-4">
           <% if comment.user === nil %>
           <% else %>
             <div class="flex items-center">
@@ -64,8 +64,8 @@
             </div>
             <span class="text-xs"><%= comment.created_at.strftime("%c") %></span>
           <% end %>
-            <p class="py-2"><%= comment.text %></p>
-            <div class="bg-red-100 w-fit px-4 rounded-xl">
+            <p><%= simple_format comment.text %></p>
+            <div class="bg-red-100 w-fit px-4 rounded-xl mt-2">
               <% if current_user.role === "admin" || current_user && current_user == comment.user %>
                 <%= button_to "Delete", recipe_comment_path(@recipe, comment), method: :delete %>
               <% end %>

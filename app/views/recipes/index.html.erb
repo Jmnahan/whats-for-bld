@@ -23,11 +23,11 @@
           <button class="hover:underline text-violet-400 mr-1">
             <%= link_to "Read More", recipe_path(recipe) %>
           </button> | 
-          <button class="mx-1">
+          <button class="mx-1 text-violet-400">
             <%= link_to "Edit", edit_recipe_path(recipe) %>
           </button> 
           <span class="mr-1">|</span> 
-          <%= button_to "Delete", recipe_path(recipe), method: :delete %>
+            <%= button_to "Delete", recipe_path(recipe), method: :delete %>
         </div>
         <div class="text-gray-400">
           <span>

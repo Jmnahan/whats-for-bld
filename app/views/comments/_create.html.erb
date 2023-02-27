@@ -1,5 +1,6 @@
-<%= form_with model: [@recipe, @comment], local: true do |f| %>
-<%= f.text_area :text, size:"40x4", placeholder: "Leave a comment...", required: true %>
-<br>
-<button class="bg-lime-300 px-4 rounded-xl"><%= f.submit "Comment" %></button>
+<div class="my-2">
+  <%= form_with model: [@recipe, @comment], local: true do |f| %>
+  <%= f.text_area :text, size:"40x4", placeholder: "Leave a comment...", required: true %>
+</div>
+<button class="bg-lime-300 px-4 rounded-xl"><%= f.submit "Add Comment" %></button>
 <% end %>
