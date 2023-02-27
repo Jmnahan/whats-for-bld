@@ -29,11 +29,12 @@
         <%= recipe.suggestion %>
       </div>
       <div class="flex items-center justify-between mt-4">
-        <div>
+        <div class = "flex">
           <button class="hover:underline text-violet-400">
             <%= link_to "Read More", recipe_path(recipe) %>
-          </button>
+          </button> 
           <% if current_user.admin? %>
+            <span class="px-2">|</span>
             <%= button_to "Delete", recipe_path(recipe), method: :delete %>
           <% end %>
         </div>
