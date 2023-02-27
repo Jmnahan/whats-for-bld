@@ -13,7 +13,7 @@
       <span class="self-center text-xl ml-2 font-medium whitespace-nowrap text-gray-800">What's for BLD?</span>
     </div>
     <div class="flex items-center md:order-2">
-        <button class="mr-2 text-gray-800">
+        <button class="mr-2 text-gray-800 font-medium">
           <%= link_to "Sign Out", destroy_user_session_path, 'data-turbo-method': :delete %>
         </button>
         <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button">
@@ -25,7 +25,7 @@
         </button>
     </div>
     <div class="items-center justify-between w-full md:flex md:w-auto md:order-1">
-      <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
+      <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 font-medium md:mt-0 md:border-0">
         <% if current_user.admin? %>
         <li>
           <button class="block py-2 pl-3 pr-4 rounded text-gray-800"><%= link_to "All Recipes", root_path %></button>
