@@ -7,7 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
-
+  has_one_attached :image
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
 

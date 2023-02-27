@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#landing'
   get 'search', to: "search#index"
-  get '/feed', to: 'pages#feed', as: 'pages_feed'
   get '/likes', to: 'recipes#likes', as: 'liked_recipes'
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
