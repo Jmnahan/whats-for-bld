@@ -22,11 +22,11 @@
       <div class="mt-3 ">
         <p class="text-2xl font-bold"><%= r.recipe.dish_name %></p>
         <p class="mt-2 font-medium">Ingredients:</p>
-        <%= r.recipe.ingredient %>
+        <%= simple_format r.recipe.ingredient %>
         <p class="mt-2 font-medium">Directions:</p>
-        <%= r.recipe.direction %>
+        <%= simple_format r.recipe.direction %>
         <p class="mt-2 font-medium">Suggestions:</p>
-        <%= r.recipe.suggestion %>
+        <%= simple_format r.recipe.suggestion %>
       </div>
       <div class="flex items-center justify-between mt-4">
         <div>
