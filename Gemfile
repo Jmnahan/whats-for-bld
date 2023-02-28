@@ -30,6 +30,12 @@ gem "jbuilder"
 # Devise
 gem 'devise'
 
+gem 'rest-client'
+
+gem 'json'
+
+gem 'edamam-ruby'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
