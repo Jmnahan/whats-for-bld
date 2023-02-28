@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'pages#landing'
   get 'search', to: "search#index"
   get '/likes', to: 'recipes#likes', as: 'liked_recipes'
+  get '/feed', to: 'pages#feed', as: 'pages_feed'
+  get '/analyze/:id', to: 'recipes#analyze', as: 'analyze'
+ 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   scope 'admin' do

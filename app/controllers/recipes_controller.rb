@@ -23,6 +23,13 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @comment = Comment.new
     @comments = @recipe.comments
+
+  end
+
+  def analyze
+    @recipe = Recipe.find(params[:id])
+    @ingredient = @recipe.ingredient
+    @results = Edamam::Client.analyze_nutrition(@ingredient)
   end
 
   def edit
@@ -55,5 +62,6 @@ class RecipesController < ApplicationController
   def recipe_params
    params.require(:recipe).permit(:dish_name, :ingredient, :direction, :suggestion, :banner)
   end
+  
   
 end
