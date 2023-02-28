@@ -18,9 +18,9 @@
         </button>
         <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button">
           <% if current_user.image.attached? %>
-            <%= link_to image_tag(current_user.image, style:"height: 45px;"), edit_user_registration_path(current_user), 'data-turbo-method': :patch %>
+            <%= link_to image_tag(current_user.image, style:"height: 45px; border-radius: 30px;"), edit_user_registration_path(current_user), 'data-turbo-method': :patch %>
           <% else %>
-            <%= link_to image_tag("default.png", style:"height: 45px;"), edit_user_registration_path(current_user), 'data-turbo-method': :patch %>
+            <%= link_to image_tag("default.png", style:"height: 45px; border-radius: 30px;"), edit_user_registration_path(current_user), 'data-turbo-method': :patch %>
           <% end %>
         </button>
     </div>

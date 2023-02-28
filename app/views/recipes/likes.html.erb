@@ -7,9 +7,9 @@
         <span class="text-sm"><%= r.created_at.strftime("%c") %></span>
         <div class="flex items-center">
           <% if r.recipe.user.image.attached? %>
-            <%= image_tag(r.recipe.user.image, style:"height: 40px;") %>
+            <%= image_tag(r.recipe.user.image, style:"height: 40px; border-radius: 30px;") %>
           <% else %>
-            <%= image_tag("default.png", style:"height: 40px;") %>
+            <%= image_tag("default.png", style:"height: 40px; border-radius: 30px;") %>
           <% end %>
           <span class="mx-2"><%= r.recipe.user.username %></span>
         </div>
