@@ -21,11 +21,11 @@
       <% end %>
       <div class="mt-3 ">
         <p class="text-2xl font-bold"><%= recipe.dish_name %></p>
-        <p class="mt-2 font-medium">Ingredients:</p>
+        <p class="mt-2 font-medium text-violet-400">Ingredients:</p>
         <%= simple_format recipe.ingredient %>
-        <p class="mt-2 font-medium">Directions:</p>
+        <p class="mt-2 font-medium text-violet-400">Directions:</p>
         <%= simple_format recipe.direction %>
-        <p class="mt-2 font-medium">Suggestions:</p>
+        <p class="mt-2 font-medium text-violet-400">Suggestions:</p>
         <%= simple_format recipe.suggestion %>
       </div>
       <div class="flex items-center justify-between mt-4">
@@ -35,7 +35,7 @@
           </button> 
           <% if current_user.admin? %>
             <span class="px-2">|</span>
-            <%= button_to "Delete", recipe_path(recipe), method: :delete %>
+            <%= button_to "Delete", recipe_path(recipe), style: 'color: #FA8072;', method: :delete %>
           <% end %>
         </div>
         <div class="text-gray-400">

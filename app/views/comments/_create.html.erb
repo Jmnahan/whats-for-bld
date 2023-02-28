@@ -1,6 +1,6 @@
-<div class="my-2">
-  <%= form_with model: [@recipe, @comment], local: true do |f| %>
-  <%= f.text_area :text, size:"40x4", placeholder: "Leave a comment...", required: true %>
-</div>
-<button class="bg-lime-300 px-4 rounded-xl"><%= f.submit "Add Comment" %></button>
+
+<%= form_with model: [@recipe, @comment], local: true do |f| %>
+<%= f.text_area :text, size:"40x4", placeholder: "Leave a comment...", required: true %>
+<br>
+<%= f.submit "Add Comment", style: 'background-color: rgb(190 242 100); padding-left: 14px; padding-right: 14px; border-radius: 14px;' %>
 <% end %>
