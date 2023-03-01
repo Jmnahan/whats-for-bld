@@ -1,12 +1,13 @@
-<h1>Liked Recipes</h1>
-  <div>
-    <% @recipe.each do |r| %>
-      <p>Author: <%= r.user.email %></p>
-      <p>Dish: <%= r.recipe.dish_name %></p>
-      <p>Ingredients: <%= r.recipe.ingredient %></p>
-      <p>Directions: <%= r.recipe.direction %></p>
-      <p>Suggestions: <%= r.recipe.suggestion %></p>
-    <% end %>
-  </div>
-<%= link_to "Back", root_path %>
-
+<div class="mt-24">
+  <h1>Liked Recipes</h1>
+    <div>
+      <% @recipe.each do |r| %>
+        <p>Author: <%= r.user.email %></p>
+        <p>Dish: <%= r.recipe.dish_name %></p>
+        <p>Ingredients: <%= r.recipe.ingredient %></p>
+        <p>Directions: <%= r.recipe.direction %></p>
+        <p>Suggestions: <%= r.recipe.suggestion %></p>
+      <% end %>
+    </div>
+  <%= link_to "Back", root_path %>
+</div>

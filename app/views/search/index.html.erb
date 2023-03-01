@@ -1,6 +1,6 @@
-<h1><%= pluralize(@recipes.count, "Result")%></h1>
-
-<table>
+<div class="mt-24">
+  <h1><%= pluralize(@recipes.count, "Result")%></h1>
+  <table>
     <thead>
       <tr>
         <th><%= sort_link(@query, :dish_name, "Dish name", default_order: :asc)%></th>
@@ -18,3 +18,4 @@
       <% end %>
     </tbody>
   </table>
+</div>
