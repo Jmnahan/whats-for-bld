@@ -1,4 +1,4 @@
 <%= search_form_for(@query, url: search_path, method: :get) do |f| %>
-  <%= f.search_field :dish_name_i_cont_any, placeholder: "Search..." %>
-  <%= f.submit "Search" %>
+  <%= f.search_field :dish_name_i_cont_any, placeholder: "Recipe name..." %>
+  <button class="bg-lime-500 ml-1 px-4 py-2 rounded-lg hover:bg-lime-400"><%= f.submit "Search" %></button>
 <% end %>

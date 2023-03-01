@@ -1,20 +1,35 @@
-<h1><%= pluralize(@recipes.count, "Result")%></h1>
-
-<table>
-    <thead>
-      <tr>
-        <th><%= sort_link(@query, :dish_name, "Dish name", default_order: :asc)%></th>
-        <th><%= sort_link(@query, :created_at, "Created at:") %></th>
-        <th><%= sort_link(@query, :user, "Author") %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @recipes.each do |recipe|%>
-        <tr>
-          <td><%= link_to recipe.dish_name, recipe%></td>
-          <td><%= link_to recipe.created_at.strftime("%F")   %></td>
-          <td><%= link_to recipe.user.email %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="mt-24 flex flex-col justify-center items-center">
+  <h1 class="text-3xl mt-10 mb-10 font-medium text-gray-800"><%= pluralize(@recipes.count, "Result")%></h1>
+  <div class="relative overflow-x-auto shadow-md rounded-lg">
+      <table class="w-full text-sm text-left text-gray-500">
+          <thead class="text-xs text-gray-800 uppercase bg-yellow-400 text-gray-800">
+              <tr>
+                  <th scope="col" class="px-10 py-3">
+                      <%= sort_link(@query, :dish_name, "Dish name", default_order: :asc)%>
+                  </th>
+                  <th scope="col" class="px-12 py-3">
+                      <%= sort_link(@query, :created_at, "Created at:") %>
+                  </th>
+                  <th scope="col" class="px-12 py-3">
+                      <%= sort_link(@query, :user, "Author") %>
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+              <% @recipes.each do |recipe|%>
+              <tr class="bg-white border-b text-gray-800 hover:bg-yellow-300">
+                  <th scope="row" class="px-10 py-4 font-medium whitespace-nowrap text-violet-400">
+                      <%= link_to recipe.dish_name, recipe%>
+                  </th>
+                  <td class="px-12 py-4">
+                      <%= recipe.created_at.strftime("%F")%>
+                  </td>
+                  <td class="px-12 py-4">
+                      <%= recipe.user.email %>
+                  </td>
+              </tr>
+              <% end %>
+          </tbody>
+      </table>
+  </div>
+</div>

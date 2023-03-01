@@ -5,21 +5,53 @@
     <h1 class="text-4xl ml-4">What's for Breakfast-Lunch-Dinner?</h1>
   </div>
   <% end %>
-  <ul class="flex">
   <% if current_user %>
-    <% if current_user.admin? %>
-      <%= link_to "All Recipes", pages_feed_path %>
-      <%= link_to "All User", users_path %>
-    <% else %>
-      <%= link_to "Home", root_path %>
-      <%= link_to "Create new recipe", new_recipe_path %>
-      <%= link_to "My recipes", recipes_path %>
-      <%= link_to "Liked recipes", liked_recipes_path %>
-      <%= link_to "User Settings", edit_user_registration_path(current_user), 'data-turbo-method': :patch %>
-      <%= image_tag(current_user.image, style:"height: 50px;") if current_user.image.attached? %>
-    <% end %>
-  <%= link_to "Sign Out", destroy_user_session_path, 'data-turbo-method': :delete %>
-  <p><%= render "search/form" %></p>
+  <div class="px-2 sm:px-4 py-2.5 rounded bg-yellow-400">
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+    <div class="flex items-center">
+      <%= image_tag("icon.png", :size => "50x50") %>
+      <span class="self-center text-xl ml-2 font-medium whitespace-nowrap text-gray-800">What's for BLD?</span>
+    </div>
+    <div class="flex items-center md:order-2">
+        <button class="mr-2 text-gray-800 font-medium">
+          <%= link_to "Sign Out", destroy_user_session_path, 'data-turbo-method': :delete %>
+        </button>
+        <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button">
+          <% if current_user.image.attached? %>
+            <%= link_to image_tag(current_user.image, style:"height: 45px; border-radius: 30px;"), edit_user_registration_path(current_user), 'data-turbo-method': :patch %>
+          <% else %>
+            <%= link_to image_tag("default.png", style:"height: 45px; border-radius: 30px;"), edit_user_registration_path(current_user), 'data-turbo-method': :patch %>
+          <% end %>
+        </button>
+    </div>
+    <div class="items-center justify-between w-full md:flex md:w-auto md:order-1">
+      <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 font-medium md:mt-0 md:border-0">
+        <% if current_user.admin? %>
+        <li>
+          <button class="block py-2 pl-3 pr-4 rounded text-gray-800"><%= link_to "All Recipes", root_path %></button>
+        </li>
+        <li>
+          <button class="block py-2 pl-3 pr-4 rounded text-gray-800"><%= link_to "All User", users_path %></button>
+        </li>
+        <% else %>
+        <li>
+          <button class="block py-2 pl-3 pr-4 rounded text-gray-800"><%= link_to "Home", root_path %></button>
+        </li>
+        <li>
+          <button class="block py-2 pl-3 pr-4 rounded text-gray-800"><%= link_to "My recipes", recipes_path %></button>
+        </li>
+        <li>
+          <button class="block py-2 pl-3 pr-4 rounded text-gray-800"><%= link_to "Liked recipes", liked_recipes_path %></button>
+        </li>
+        <li>
+          <button class="block py-2 pl-3 pr-4 rounded text-gray-800"><%= link_to "New recipe", new_recipe_path %></button>
+        </li>
+        <% end %>
+        <li><%= render "search/form" %></li>
+      </ul>
+    </div>
+    </div>
+  </div>
   <% end %>
-  </ul>
 </nav>
+ 

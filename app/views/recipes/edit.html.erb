@@ -1,3 +1,6 @@
-<h1>Edit Recipe</h1>
-<%= render "form",recipe: @recipe, url: recipe_path(@recipe), method: :patch  %>
-<%= link_to "Back", root_path %>
+<div class="mt-24 flex flex-col justify-center items-center">
+  <h1 class="text-3xl mt-10 mb-10 font-medium text-gray-800">Edit Recipe</h1>
+  <div class="bg-yellow-400 p-4 rounded-lg">
+    <%= render "form",recipe: @recipe, url: recipe_path(@recipe), method: :patch  %>
+  </div>
+</div>

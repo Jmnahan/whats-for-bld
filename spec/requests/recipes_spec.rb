@@ -34,7 +34,7 @@ RSpec.describe "Recipes", type: :request do
 
       it 'it should redirect to root_path' do
         post recipes_path(recipe), params: { recipe: valid_params }
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to recipes_path
       end
 
       it 'should create a new recipe' do
@@ -65,7 +65,7 @@ RSpec.describe "Recipes", type: :request do
     it 'should return http success' do
       created_recipe = create(:recipe)
       delete recipe_path(created_recipe)
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to recipes_path
     end
   end
 end

@@ -1,39 +1,43 @@
 <%= form_for recipe, url: url, method: method do |f| %>
 
-<p>
+<p class="mb-2 text-gray-800">
+  <%= f.label :dish_name %><br/>
+  <%= f.text_field :dish_name, size:"37" %>
+</p>
+<p class="mb-2 text-gray-800">
+  <%= f.label :ingredient %><br/>
+  <%= f.text_area :ingredient, size:"40x5" %>
+</p>
+<p class="mb-2 text-gray-800">
+  <%= f.label :direction %><br/>
+  <%= f.text_area :direction, size:"40x5" %>
+</p>
+<p class="mb-2 text-gray-800">
+  <%= f.label :suggestion %><br/>
+  <%= f.text_area :suggestion, size:"40x5" %>
+</p>
+<p class="mb-2 text-gray-800">
+  <%= f.label :banner %><br/>
+  <%= f.file_field :banner %>
+</p>
+
+<div class="flex justify-between">
+  <button class="bg-lime-500 hover:bg-lime-400 rounded-lg px-4 py-2 hover:bg-yellow-300 text-gray-800">
+    <%= f.submit %>
+  </button>
+  <button class="bg-lime-500 hover:bg-lime-400 rounded-lg px-8 py-2 hover:bg-yellow-300 text-gray-800">
+    <%= link_to "Back", recipes_path %>
+  </button>
+</div>
+
+<div class="text-red-600">
   <% if @recipe.errors.any? %>
     <ul>
       <% @recipe.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
-  
   <% end %>
-</p>
-
-<p>
-  <%= f.label :dish_name %><br/>
-  <%= f.text_field :dish_name %>
-</p>
-<p>
-  <%= f.label :ingredient %><br/>
-  <%= f.text_field :ingredient %>
-</p>
-<p>
-  <%= f.label :direction %><br/>
-  <%= f.text_field :direction %>
-</p>
-<p>
-  <%= f.label :suggestion %><br/>
-  <%= f.text_field :suggestion %>
-</p>
-<p>
-  <%= f.label :banner %><br/>
-  <%= f.file_field :banner %>
-</p>
-
-<p>
-  <%= f.submit %>
-</p>
+</div>
 
 <% end %>
