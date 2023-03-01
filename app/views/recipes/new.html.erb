@@ -3,10 +3,4 @@
   <div class="bg-yellow-400 p-4 rounded-lg">
     <%= render "form", recipe: @recipe, url: recipes_path, method: :post %>
   </div>
-
-  <%= form_tag(analyze_path, method: :get) do %>
-    <%= label_tag(:ingredient, 'Enter an ingredient:') %>
-    <%= text_field_tag(:ingredient) %>
-    <%= submit_tag('Analyze') %>
-  <% end %>
 </div>

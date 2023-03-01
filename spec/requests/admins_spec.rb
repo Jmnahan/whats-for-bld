@@ -12,7 +12,7 @@ RSpec.describe 'Admins', type: :request do
 
   describe 'GET /' do
     it 'should return http success' do
-      get pages_feed_path
+      get root_path
       expect(response).to be_successful
     end
 

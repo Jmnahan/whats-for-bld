@@ -12,10 +12,5 @@ RSpec.describe "Pages", type: :request do
       get root_path
       expect(response).to be_successful
     end
-
-    it 'feed returns http success' do
-      get pages_feed_path
-      expect(response).to be_successful
-    end
   end
 end
