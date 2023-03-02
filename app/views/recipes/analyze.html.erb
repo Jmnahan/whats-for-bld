@@ -1,12 +1,12 @@
-<h1>Nutrition Analysis for <%= @ingredient %>:</h1>
+<div class="mt-24 flex flex-col justify-center items-center">
+  <h1 class="text-2xl mt-10 mb-10 font-medium text-gray-800">Nutrition Analysis for <%= @recipe.dish_name %></h1>
+  <div class="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm text-gray-800 mt-4 mb-4 border-2">
+    <p>Nutrition Analysis for <%= @ingredient %>:</p>
 
-
-  
-
-
-  <p>Calories: <%= @results['calories'] %></p>
-  <p>Protein: <%= @results['totalNutrients']['PROCNT']['quantity'] %> <%= @results['totalNutrients']['PROCNT']['unit'] %></p>
-  <p>Fat: <%= @results['totalNutrients']['FAT']['quantity'] %> <%= @results['totalNutrients']['FAT']['unit'] %></p>
-
-
-<%= link_to 'Back', :back %>
+    <p>Calories: <%= @results['calories'] %></p>
+    <p>Protein: <%= @results['totalNutrients']['PROCNT']['quantity'] %> <%= @results['totalNutrients']['PROCNT']['unit'] %></p>
+    <p>Fat: <%= @results['totalNutrients']['FAT']['quantity'] %> <%= @results['totalNutrients']['FAT']['unit'] %></p>
+    
+    <%= link_to 'Back', :back %>
+  </div>
+</div>
