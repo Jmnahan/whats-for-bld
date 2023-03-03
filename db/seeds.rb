@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
 admin = User.new(email: 'admin1@email.com', password: 'password', role: :admin, username: 'Admin1')
 admin.skip_confirmation!
 admin.save
@@ -32,6 +24,26 @@ user5.image.attach( io:  File.open(File.join(Rails.root,'app/assets/images/5.jpg
 user5.skip_confirmation!
 user5.save(validate: false)
 
+user6 = User.new(email: "user6@email.com", password: 'password', username: "Num6Iam")
+user6.image.attach( io:  File.open(File.join(Rails.root,'app/assets/images/6.jpg')), filename: '6.jpg')
+user6.skip_confirmation!
+user6.save(validate: false)
+
+user7 = User.new(email: "user7@email.com", password: 'password', username: "thisIsMe")
+user7.image.attach( io:  File.open(File.join(Rails.root,'app/assets/images/7.jpg')), filename: '7.jpg')
+user7.skip_confirmation!
+user7.save(validate: false)
+
+user8 = User.new(email: "user8@email.com", password: 'password', username: "MrIcanCook")
+user8.image.attach( io:  File.open(File.join(Rails.root,'app/assets/images/8.jpg')), filename: '8.jpg')
+user8.skip_confirmation!
+user8.save(validate: false)
+
+user9 = User.new(email: "user9@email.com", password: 'password', username: "MrsIcanCook")
+user9.image.attach( io:  File.open(File.join(Rails.root,'app/assets/images/9.jpg')), filename: '9.jpg')
+user9.skip_confirmation!
+user9.save(validate: false)
+
 recipe5 = Recipe.new(user: user5, dish_name: 'Chicken Adobo', ingredient: 
   '2 tsp oil, canola
   6 cloves garlic, crushed
@@ -53,11 +65,6 @@ recipe5 = Recipe.new(user: user5, dish_name: 'Chicken Adobo', ingredient:
   5. This all-time classic dish is now ready to be enjoyed by the whole family with a bowl of steaming rice. ', suggestion: "Enjoy!!!")
 recipe5.banner.attach( io:  File.open(File.join(Rails.root,'app/assets/images/adobo.jpg')), filename: 'adobo.jpg')
 recipe5.save(validate: false)
-
-user6 = User.new(email: "user6@email.com", password: 'password', username: "Num6Iam")
-user6.image.attach( io:  File.open(File.join(Rails.root,'app/assets/images/6.jpg')), filename: '6.jpg')
-user6.skip_confirmation!
-user6.save(validate: false)
 
 recipe6 = Recipe.new(user: user6, dish_name: 'Kare-Kare', ingredient: 
   '3 lbs oxtail cut in 2 inch slices you an also use tripe or beef slices
@@ -84,11 +91,6 @@ recipe6 = Recipe.new(user: user6, dish_name: 'Kare-Kare', ingredient:
   suggestion: "Serve hot with shrimp paste. Enjoy!")
 recipe6.banner.attach( io:  File.open(File.join(Rails.root,'app/assets/images/karekare.jpg')), filename: 'karekare.jpg')
 recipe6.save(validate: false)
-
-user7 = User.new(email: "user7@email.com", password: 'password', username: "thisIsMe")
-user7.image.attach( io:  File.open(File.join(Rails.root,'app/assets/images/7.jpg')), filename: '7.jpg')
-user7.skip_confirmation!
-user7.save(validate: false)
 
 recipe7 = Recipe.new(user: user7, dish_name: 'Homemade Croissants', ingredient: 
   'For the Détrempe (dough)
@@ -117,11 +119,6 @@ recipe7 = Recipe.new(user: user7, dish_name: 'Homemade Croissants', ingredient:
 recipe7.banner.attach( io:  File.open(File.join(Rails.root,'app/assets/images/quaso.jpg')), filename: 'quaso.jpg')
 recipe7.save(validate: false)
 
-user8 = User.new(email: "user8@email.com", password: 'password', username: "MrIcanCook")
-user8.image.attach( io:  File.open(File.join(Rails.root,'app/assets/images/8.jpg')), filename: '8.jpg')
-user8.skip_confirmation!
-user8.save(validate: false)
-
 recipe8 = Recipe.new(user: user8, dish_name: 'Pork Dinakdakan Recipe', ingredient: 
   '2 lbs. liempo pork belly
   ½ cup Lady’s Choice Mayonnaise
@@ -146,11 +143,6 @@ recipe8 = Recipe.new(user: user8, dish_name: 'Pork Dinakdakan Recipe', ingredien
   suggestion: "Share and enjoy!")
 recipe8.banner.attach( io:  File.open(File.join(Rails.root,'app/assets/images/dinakdakan.jpg')), filename: 'dinakdakan.jpg')
 recipe8.save(validate: false)
-
-user9 = User.new(email: "user9@email.com", password: 'password', username: "MrsIcanCook")
-user9.image.attach( io:  File.open(File.join(Rails.root,'app/assets/images/9.jpg')), filename: '9.jpg')
-user9.skip_confirmation!
-user9.save(validate: false)
 
 recipe9 = Recipe.new(user: user9, dish_name: 'Peach Mango Pie', ingredient: 
   '1 cup canned peaches - cut into cubes
