@@ -9,37 +9,37 @@ In addition, the application will feature a social networking aspect, allowing u
 
 For exploring around our app kindly check [db/seeds.rb](https://github.com/Jmnahan/whats-for-bld/blob/main/db/seeds.rb) for the initial data
 
-* Ruby version
+### Ruby version
 
   Ruby 3.1.2
 
-* System dependencies
+### System dependencies
 
   - Ransack 4.0
   - Tailwindcss-rails 2.0
   - Edamam-ruby
 
-* Configuration
+### Configuration
 
   ```ruby
   bundle install
   ```
   bundle install
   
-* Database creation
+### Database creation
 
   ```ruby
   rails db:create
   ```
 
-* Database initialization
+### Database initialization
 
   ```ruby
   rails db:migrate
   rails db:seed
   ```
 
-* How to run the test suite
+### How to run the test suite
 
   ```ruby
   bundle exec rspec
