@@ -1,4 +1,4 @@
-# What's for BLD? (Breakfast-Lunch-Dinner?) 
+# What's for BLD? (Breakfast-Lunch-Dinner? 🍛 ) 
 A Ruby on rails one stop shop blog app for users that wanted share and experience other cultures through food recipes.
 
 Food culture is an integral part of our society and represents our unique history and traditions. However, with the rise of globalization and homogenization, many food recipes are at risk of being lost. A food blog application can play a significant role in preserving food culture by providing a platform for sharing and celebrating different recipes and culinary practices.
