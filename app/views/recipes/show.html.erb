@@ -27,13 +27,16 @@
         <%= simple_format @recipe.suggestion %>
       </div>
       <div class="flex items-center justify-between mt-4">
-        <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
-        <% if pre_like %>
-          <%= button_to 'Unlike', recipe_like_path(@recipe, pre_like), style: 'background-color: #FA8072; padding-left: 14px; padding-right: 14px; border-radius: 14px;' , method: :delete %>
-        <% else %>
-          <%= button_to 'Like', recipe_likes_path(@recipe), style: 'background-color: rgb(190 242 100); padding-left: 14px; padding-right: 14px; border-radius: 14px;', method: :post %>
-        <% end %>
-        <%= button_to 'Analyze', analyze_path(@recipe.id), method: :get %>
+        <div class="flex">
+          <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+            <%= button_to 'Unlike', recipe_like_path(@recipe, pre_like), style: 'background-color: #FA8072; padding-left: 14px; padding-right: 14px; border-radius: 14px;' , method: :delete %>
+          <% else %>
+            <%= button_to 'Like', recipe_likes_path(@recipe), style: 'background-color: rgb(190 242 100); padding-left: 14px; padding-right: 14px; border-radius: 14px;', method: :post %>
+          <% end %> 
+          <span class="mx-2">|</span>
+          <%= button_to "Analyze this recipe's nutritions", analyze_path(@recipe.id), style:"color: #a78bfa; text-decoration: underline;", method: :get %>
+        </div>
       <div class="text-gray-400">
         <span>
           <%= @recipe.comments_counter %> <%= @recipe.comments_counter == 1 ? 'Comment' : 'Comments'%>

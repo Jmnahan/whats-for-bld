@@ -13,15 +13,16 @@
       <span class="self-center text-xl ml-2 font-medium whitespace-nowrap text-gray-800">What's for BLD?</span>
     </div>
     <div class="flex items-center md:order-2">
-        <button class="mr-2 text-gray-800 font-medium">
-          <%= link_to "Sign Out", destroy_user_session_path, 'data-turbo-method': :delete %>
-        </button>
+        <span class="mr-2"><%= current_user.username %></span>
         <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button">
           <% if current_user.image.attached? %>
             <%= link_to image_tag(current_user.image, style:"height: 45px; border-radius: 30px;"), edit_user_registration_path(current_user), 'data-turbo-method': :patch %>
           <% else %>
             <%= link_to image_tag("default.png", style:"height: 45px; border-radius: 30px;"), edit_user_registration_path(current_user), 'data-turbo-method': :patch %>
           <% end %>
+        </button>
+         <button class="ml-2 text-gray-800 font-medium">
+          <%= link_to "Sign Out", destroy_user_session_path, 'data-turbo-method': :delete %>
         </button>
     </div>
     <div class="items-center justify-between w-full md:flex md:w-auto md:order-1">
