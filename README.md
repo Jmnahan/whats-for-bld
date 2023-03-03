@@ -11,7 +11,7 @@ For exploring around our app kindly check [db/seeds.rb](https://github.com/Jmnah
 
 ### Ruby version
 
-  Ruby 3.1.2
+  - Ruby 3.1.2
 
 ### System dependencies
 
@@ -24,7 +24,6 @@ For exploring around our app kindly check [db/seeds.rb](https://github.com/Jmnah
   ```ruby
   bundle install
   ```
-  bundle install
   
 ### Database creation
 
