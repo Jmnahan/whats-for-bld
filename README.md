@@ -7,7 +7,7 @@ For our final project, We plan to develop a food blog application that brings to
 
 In addition, the application will feature a social networking aspect, allowing users to interact with each other through comments and likes. Users will also be able to create their own profiles, where they can showcase their favorite recipes and connect with other food enthusiasts.
 
-For exploring around our app kindly check [db/seeds.rb](https://github.com/Jmnahan/whats-for-bld/blob/main/db/seeds.rb) for the initial data 
+For exploring around our app kindly check [db/seeds.rb](https://github.com/Jmnahan/whats-for-bld/blob/main/db/seeds.rb) for the initial data
 
 * Ruby version
 
