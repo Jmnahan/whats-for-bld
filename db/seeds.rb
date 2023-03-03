@@ -67,19 +67,19 @@ recipe5.banner.attach( io:  File.open(File.join(Rails.root,'app/assets/images/ad
 recipe5.save(validate: false)
 
 recipe6 = Recipe.new(user: user6, dish_name: 'Kare-Kare', ingredient: 
-  '3 lbs oxtail cut in 2 inch slices you an also use tripe or beef slices
-  1 piece small banana flower bud sliced
-  1 bundle pechay or bok choy
-  1 bundle string beans cut into 2 inch slices
-  4 pieces eggplants sliced
-  1 cup ground peanuts
-  1/2 cup peanut butter
-  1/2 cup shrimp paste
-  34 Ounces water about 1 Liter
-  1/2 cup annatto seeds soaked in a cup of water
-  1/2 cup toasted ground rice
-  1 tbsp garlic minced
-  1 piece onion chopped
+  '3 lbs oxtail cut in 2 inch slices you an also use tripe or beef slices,
+  1 piece small banana flower bud sliced,
+  1 bundle pechay or bok choy,
+  1 bundle string beans cut into 2 inch slices,
+  4 pieces eggplants sliced,
+  1 cup ground peanuts,
+  1/2 cup peanut butter,
+  1/2 cup shrimp paste,
+  34 Ounces water about 1 Liter,
+  1/2 cup annatto seeds soaked in a cup of water,
+  1/2 cup toasted ground rice,
+  1 tbsp garlic minced,
+  1 piece onion chopped,
   salt and pepper', direction: 
   '1. In a large pot, bring the water to a boil
   2. Put in the oxtail followed by the onions and simmer for 2.5 to 3 hrs or until tender (35 minutes if using a pressure cooker)
@@ -94,17 +94,17 @@ recipe6.save(validate: false)
 
 recipe7 = Recipe.new(user: user7, dish_name: 'Homemade Croissants', ingredient: 
   'For the Détrempe (dough)
-  4⅔ cups/605 grams all-purpose or bread flour, plus more for dusting
-  ⅓ cup/66 grams granulated sugar
-  1 tablespoon plus ½ teaspoon/12 grams kosher salt
-  2¼ teaspoons/7 grams active dry yeast
-  ¾ cup plus 2 tablespoons/214 grams water, at room temperature
-  ½ cup/120 grams whole milk, at room temperature
-  ¼ cup/57 grams unsalted butter, cut into ½-inch pieces, chilled
+  4⅔ cups/605 grams all-purpose or bread flour, plus more for dusting,
+  ⅓ cup/66 grams granulated sugar,
+  1 tablespoon plus ½ teaspoon/12 grams kosher salt,
+  2¼ teaspoons/7 grams active dry yeast,
+  ¾ cup plus 2 tablespoons/214 grams water, at room temperature,
+  ½ cup/120 grams whole milk, at room temperature,
+  ¼ cup/57 grams unsalted butter, cut into ½-inch pieces, chilled,
   For the Butter Block and Assembly
-  1½ cups/340 grams unsalted European or European-style butter (3 sticks), chilled
-  All-purpose flour, for rolling
-  1 large egg yolk
+  1½ cups/340 grams unsalted European or European-style butter (3 sticks), chilled,
+  All-purpose flour, for rolling,
+  1 large egg yolk,
   1 tablespoon heavy cream', direction: 
   '1. make easy dough from butter, flour, sugar, salt, yeast, and milk
   2. roll out dough into a large rectangle
@@ -120,15 +120,15 @@ recipe7.banner.attach( io:  File.open(File.join(Rails.root,'app/assets/images/qu
 recipe7.save(validate: false)
 
 recipe8 = Recipe.new(user: user8, dish_name: 'Pork Dinakdakan Recipe', ingredient: 
-  '2 lbs. liempo pork belly
-  ½ cup Lady’s Choice Mayonnaise
-  3 tablespoons Knorr Liquid Seasoning
-  2 to 3 pieces lime or 5 to 6 pieces calamansi
-  2 pieces red onion sliced into thin pieces
-  10 pieces Thai chili peppers chopped
-  3 pieces long green pepper sliced
-  1 teaspoon onion powder optional
-  Salt and ground black pepper to taste
+  '2 lbs. liempo pork belly,
+  ½ cup Lady’s Choice Mayonnaise,
+  3 tablespoons Knorr Liquid Seasoning,
+  2 to 3 pieces lime or 5 to 6 pieces calamansi,
+  2 pieces red onion sliced into thin pieces,
+  10 pieces Thai chili peppers chopped,
+  3 pieces long green pepper sliced,
+  1 teaspoon onion powder optional,
+  Salt and ground black pepper to taste,
   1 ½ quarts water', direction: 
   '1. Boil water in a cooking pot.
   2. Add pork belly. Cover and continue to boil in medium heat for 30 to 35 minutes.
