@@ -153,13 +153,13 @@ user9.skip_confirmation!
 user9.save(validate: false)
 
 recipe9 = Recipe.new(user: user9, dish_name: 'Peach Mango Pie', ingredient: 
-  '1 cup canned peaches - cut into cubes
-  1 cup ripe mango - cut into cubes
-  1 tablespoon cornstarch
-  ¼ cup sugar
-  dash of salt
-  5 tablespoons peach syrup
-  1 puff pastry sheet
+  '1 cup canned peaches - cut into cubes,
+  1 cup ripe mango - cut into cubes,
+  1 tablespoon cornstarch,
+  ¼ cup sugar,
+  dash of salt,
+  5 tablespoons peach syrup,
+  1 puff pastry sheet,
   oil - for deep frying', direction: 
   '1. In a small bowl, mix the cornstarch and sugar together.
   2. In a saucepan or small pot, combine the peaches, mangoes, sugar-cornstarch mix, salt, and the syrup from canned peaches. Mix well. Bring to a simmer over medium heat and continue cooking for 3-5 minutes or until it becomes really thick like jam.

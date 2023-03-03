@@ -29,7 +29,21 @@ class RecipesController < ApplicationController
   def analyze
     @recipe = Recipe.find(params[:id])
     @ingredient = @recipe.ingredient
-    @results = Edamam::Client.analyze_nutrition(@ingredient)
+    @nutritions = @ingredient.split(',')
+    @calorie = []
+    @fat = []
+    
+    @nutritions.each do |nutrition|
+      @result = Edamam::Client.analyze_nutrition(nutrition)
+      @calorie.push(@result['calories'])
+    end
+
+    def sum(array)
+      array.reduce(:+)
+    end
+
+    @totalcal = sum(@calorie)
+
   end
 
   def edit

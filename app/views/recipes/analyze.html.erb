@@ -1,12 +1,8 @@
+<div class="flex flex-col h-screen justify-center items-center">
 <h1>Nutrition Analysis for <%= @ingredient %>:</h1>
+<p>Calories: <%= @totalcal %></p>
 
-
-  
-
-
-  <p>Calories: <%= @results['calories'] %></p>
-  <p>Protein: <%= @results['totalNutrients']['PROCNT']['quantity'] %> <%= @results['totalNutrients']['PROCNT']['unit'] %></p>
-  <p>Fat: <%= @results['totalNutrients']['FAT']['quantity'] %> <%= @results['totalNutrients']['FAT']['unit'] %></p>
+</div>
 
 
 <%= link_to 'Back', :back %>
