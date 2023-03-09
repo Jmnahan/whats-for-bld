@@ -14,7 +14,6 @@ For exploring around our app kindly check [db/seeds.rb](https://github.com/Jmnah
 
 - sign-up email confirmation is currently not implemented
 - some img assets are showing as broken image
-- edaman api current implementation can only retrieve nutritions for one ingredient at a time
 
 
 ### Ruby version
