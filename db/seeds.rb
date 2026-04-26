@@ -162,3 +162,40 @@ recipe9 = Recipe.new(user: user9, dish_name: 'Peach Mango Pie', ingredient:
   suggestion: "If you prefer to have them baked instead of fried. Place pocket pies on a baking sheet lined with parchment paper in a single layer. Brush each with the egg wash to make them shiny and brown after baking. Poke (3-5) small holes on each using a toothpick or fork to let the steam out and prevent them from bursting open while baking. Bake at 360°F/180°C for 18-20 minutes or until they appear light brown and shiny.")
 recipe9.banner.attach( io:  File.open(File.join(Rails.root,'app/assets/images/peach-mango-pie.jpg')), filename: 'peach-mango-pie.jpg')
 recipe9.save(validate: false)
+
+users = User.all.to_a
+recipes = Recipe.all.to_a
+
+comment_texts = [
+  "This looks absolutely delicious! Can't wait to try it.",
+  "Made this last night and the whole family loved it!",
+  "Great recipe, I added a little extra garlic and it was perfect.",
+  "Simple and tasty, this is now a staple in our household.",
+  "I've tried many versions of this dish, this one is the best.",
+  "The directions were very clear and easy to follow.",
+  "Turned out amazing! Will definitely make this again.",
+  "I substituted some ingredients and it still came out great.",
+  "My kids absolutely loved this, thank you for sharing!",
+  "Perfect comfort food, highly recommend!"
+]
+
+recipes.each do |recipe|
+  commenters = users.reject { |u| u.id == recipe.user_id }.sample(3)
+  commenters.each do |user|
+    Comment.create!(
+      user: user,
+      recipe: recipe,
+      text: comment_texts.sample
+    )
+  end
+end
+
+recipes.each do |recipe|
+  likers = users.reject { |u| u.id == recipe.user_id }.sample(3)
+  likers.each do |user|
+    Like.create!(
+      user: user,
+      recipe: recipe
+    )
+  end
+end
